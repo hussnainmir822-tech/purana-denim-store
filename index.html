@@ -1,550 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purana Denim Store - Premium Denim Fashion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+<title>Purana Denim | Premium Fashion Store</title>
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+<meta name="description" content="Purana Denim - Premium Men's & Women's Denim Clothing. Modern Fashion Store.">
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
+<link rel="stylesheet" href="style.css">
 
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(184, 134, 11, 0.6);
-            }
-        }
-
-        /* Navigation */
-        nav {
-            background-color: rgba(10, 10, 10, 0.95);
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid #b8860b;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 900;
-            color: #b8860b;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #e0e0e0;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #b8860b;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #b8860b;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            padding: 120px 50px;
-            text-align: center;
-            animation: fadeInDown 1s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(184, 134, 11, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 72px;
-            color: #b8860b;
-            margin-bottom: 20px;
-            animation: fadeInDown 1.2s ease-out;
-            letter-spacing: 3px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-            animation: fadeInUp 1.4s ease-out;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            background-color: #b8860b;
-            color: #0a0a0a;
-            padding: 15px 50px;
-            font-size: 16px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1.6s ease-out;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .cta-button:hover {
-            background-color: #d4a51d;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.4);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 80px 50px;
-            background-color: #0f0f0f;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .feature-card {
-            background-color: rgba(30, 30, 30, 0.8);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        .feature-card:nth-child(2) {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .feature-card:nth-child(3) {
-            animation: slideInRight 0.8s ease-out;
-        }
-
-        .feature-card:hover {
-            border-color: #b8860b;
-            background-color: rgba(184, 134, 11, 0.1);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(184, 134, 11, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #b8860b;
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: #a0a0a0;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 50px;
-            background-color: #0a0a0a;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            color: #b8860b;
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInDown 0.8s ease-out;
-            letter-spacing: 2px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .product-card {
-            background-color: rgba(30, 30, 30, 0.9);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            animation: fadeInUp 0.8s ease-out;
-            border: 2px solid rgba(184, 134, 11, 0.2);
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            border-color: #b8860b;
-            box-shadow: 0 25px 50px rgba(184, 134, 11, 0.3);
-        }
-
-        .product-image {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card:hover .product-image {
-            background: linear-gradient(135deg, #b8860b 0%, #8b6508 100%);
-        }
-
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: none;
-            transition: left 0.4s ease;
-        }
-
-        .product-card:hover .product-image::before {
-            left: 100%;
-            animation: none;
-        }
-
-        .product-info {
-            padding: 25px;
-        }
-
-        .product-info h4 {
-            color: #b8860b;
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .product-info p {
-            color: #a0a0a0;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .product-price {
-            color: #b8860b;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .add-to-cart {
-            background-color: #b8860b;
-            color: #0a0a0a;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .add-to-cart:hover {
-            background-color: #d4a51d;
-            transform: scale(1.05);
-        }
-
-        /* Collection Section */
-        .collection {
-            padding: 80px 50px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            text-align: center;
-        }
-
-        .collection-content {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .collection-content p {
-            color: #a0a0a0;
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .collection-button {
-            background-color: transparent;
-            color: #b8860b;
-            padding: 15px 50px;
-            font-size: 16px;
-            border: 2px solid #b8860b;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        .collection-button:hover {
-            background-color: #b8860b;
-            color: #0a0a0a;
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000;
-            padding: 40px 50px;
-            text-align: center;
-            border-top: 2px solid #b8860b;
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        footer p {
-            color: #a0a0a0;
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #b8860b;
-            font-size: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-            color: #d4a51d;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .nav-links {
-                gap: 20px;
-            }
-
-            .hero {
-                padding: 80px 20px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .features {
-                padding: 40px 20px;
-                gap: 20px;
-            }
-
-            .products {
-                padding: 40px 20px;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-            }
-
-            .collection {
-                padding: 40px 20px;
-            }
-
-            footer {
-                padding: 30px 20px;
-            }
-        }
-    </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">PURANA DENIM</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>PREMIUM DENIM</h1>
-            <p>Crafted for Style. Built for Comfort. Designed for You.</p>
-            <button class="cta-button">Shop Now</button>
-        </div>
-    </section>
+<!-- ================= LOADER ================= -->
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <div class="feature-icon">✨</div>
-            <h3>Premium Quality</h3>
-            <p>100% authentic denim crafted with the finest materials from around the world.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">🚚</div>
-            <h3>Fast Delivery</h3>
-            <p>Quick and reliable shipping to your doorstep within 5-7 business days.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">💯</div>
-            <h3>100% Authentic</h3>
-            <p>Every piece is verified and guaranteed to be genuine Purana Denim.</p>
-        </div>
-    </section>
+<div id="loader">
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        
+    <h1>Purana Denim</h1>
+
+</div>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-shirt"></i>
+
+<span>Purana Denim</span>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Men</a></li>
+
+<li><a href="#">Women</a></li>
+
+<li><a href="#">Collections</a></li>
+
+<li><a href="#">New Arrival</a></li>
+
+<li><a href="#">Sale</a></li>
+
+<li><a href="#">About</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="icons">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<i class="fa-regular fa-heart"></i>
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h3>Luxury Denim Collection</h3>
+
+<h1>Crafted For Every Generation</h1>
+
+<p>
+
+Discover timeless denim with modern craftsmanship.
+
+Premium quality jeans, jackets and casual wear
+
+designed to elevate your everyday style.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn">Shop Now</a>
+
+<a href="#" class="btn2">Explore Collection</a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+Scroll Down
+
+</div>
+
+</section>
+
+<!-- ================= FEATURE ================= -->
+
+<section class="feature">
+
+<h2>Featured Collections</h2>
+
+<p>
+
+Luxury fashion inspired by heritage and modern elegance.
+
+</p>
+
+<div class="feature-grid">
+
+<div class="card">
+
+<img src="images/men.jpg">
+
+<h3>Men's Denim</h3>
+
+<p>
+
+Premium jeans, shirts and jackets.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/women.jpg">
+
+<h3>Women's Denim</h3>
+
+<p>
+
+Elegant fashion for every occasion.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/jacket.jpg">
+
+<h3>Jackets</h3>
+
+<p>
+
+Classic handcrafted denim jackets.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/new.jpg">
+
+<h3>New Arrival</h3>
+
+<p>
+
+Latest fashion collection 2026.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products">
+
+<h2>Trending Products</h2>
+
+<div class="product-grid">
+
+<div class="product">
+
+<img src="images/p1.jpg">
+
+<h3>Classic Blue Jeans</h3>
+
+<span>Rs. 3,999</span>
+
+<button>Add To Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/p2.jpg">
+
+<h3>Denim Jacket</h3>
+
+<span>Rs. 5,499</span>
+
+<button>Add To Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/p3.jpg">
+
+<h3>Black Denim</h3>
+
+<span>Rs. 4,499</span>
+
+<button>Add To Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/p4.jpg">
+
+<h3>Premium Shirt</h3>
+
+<span>Rs. 2,999</span>
+
+<button>Add To Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/p5.jpg">
+
+<h3>Oversized Jacket</h3>
+
+<span>Rs. 6,999</span>
+
+<button>Add To Cart</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/p6.jpg">
+
+<h3>Vintage Jeans</h3>
+
+<span>Rs. 4,999</span>
+
+<button>Add To Cart</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about">
+
+<div class="left">
+
+<img src="images/about.jpg">
+
+</div>
+
+<div class="right">
+
+<h2>About Purana Denim</h2>
+
+<p>
+
+Purana Denim blends timeless craftsmanship with modern fashion.
+
+Every collection is designed with attention to detail,
+
+comfort and premium fabric quality.
+
+Our mission is to provide luxury denim that lasts for years
+
+while maintaining affordability and elegance.
+
+</p>
+
+<a href="#">Read More</a>
+
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+<div>
+
+<h2>50K+</h2>
+
+<p>Happy Customers</p>
+
+</div>
+
+<div>
+
+<h2>250+</h2>
+
+<p>Products</p>
+
+</div>
+
+<div>
+
+<h2>30+</h2>
+
+<p>Cities</p>
+
+</div>
+
+<div>
+
+<h2>99%</h2>
+
+<p>Customer Satisfaction</p>
+
+</div>
+
+</section>
+
+<!-- ================= WHY ================= -->
+
+<section class="why">
+
+<h2>Why Choose Us</h2>
+
+<div class="why-grid">
+
+<div>
+
+<i class="fa-solid fa-award"></i>
+
+<h3>Premium Quality</h3>
+
+<p>
+
+Finest fabrics with durable stitching.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h3>Fast Delivery</h3>
+
+<p>
+
+Nationwide shipping across Pakistan.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-arrows-rotate"></i>
+
+<h3>Easy Return</h3>
+
+<p>
+
+7-day exchange policy.
+
+</p>
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>Support</h3>
+
+<p>
+
+Customer care available every day.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TESTIMONIAL ================= -->
+
+<section class="testimonial">
+
+<h2>Customer Reviews</h2>
+
+<div class="review">
+
+<p>
+
+★★★★★
+
+Purana Denim exceeded my expectations.
+
+Excellent quality and amazing fit.
+
+</p>
+
+<h4>— Ali Raza</h4>
+
+</div>
+
+<div class="review">
+
+<p>
+
+★★★★★
+
+Best denim brand I've purchased from.
+
+Highly recommended.
+
+</p>
+
+<h4>— Ayesha Khan</h4>
+
+</div>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+<h2>Stay Updated</h2>
+
+<p>
+
+Subscribe to receive exclusive offers and new arrivals.
+
+</p>
+
+<form>
+
+<input type="email" placeholder="Your Email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<div class="contact-grid">
+
+<div>
+
+<h3>Store Address</h3>
+
+<p>Lahore, Pakistan</p>
+
+<p>+92 300 0000000</p>
+
+<p>info@puranadenim.com</p>
+
+</div>
+
+<div>
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Message"></textarea>
+
+<button>
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>Purana Denim</h2>
+
+<p>
+
+Luxury denim clothing inspired by heritage,
+
+crafted for today's generation.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li>Home</li>
+
+<li>Shop</li>
+
+<li>Collections</li>
+
+<li>About</li>
+
+<li>Contact</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Customer Service</h3>
+
+<ul>
+
+<li>Shipping</li>
+
+<li>Returns</li>
+
+<li>Privacy Policy</li>
+
+<li>Terms</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<i class="fab fa-facebook"></i>
+
+<i class="fab fa-instagram"></i>
+
+<i class="fab fa-youtube"></i>
+
+<i class="fab fa-tiktok"></i>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 Purana Denim. All Rights Reserved.
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
